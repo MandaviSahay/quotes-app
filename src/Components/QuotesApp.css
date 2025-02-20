@@ -1,0 +1,47 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right, #ffac24, #ffd789);
+    display: grid;
+    place-items: center;
+}
+.quotes-app{
+    width: 90vmin;
+    aspect-ratio: 3/2;
+    background-color: #212226;
+    border-radius: 3rem;
+    padding: 4rem;
+    box-shadow: -2rem 2rem 6rem rgba(0,0,0,0.6);
+    position: relative;
+}
+.app-heading{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 5rem;
+    color: #ddd;
+}
+.fav-icon{
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+    font-size: 4rem;
+    background-image: linear-gradient(to left, #2e6f79, #1b9b96);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    text-shadow: -.3rem .4rem 2rem rgba(27, 155, 150, 0.4);
+}
+.fav-icon:active{
+    transform: translateY(0.2rem);
+}
+.quote{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+.quote-text{
+    font-size: clamp(1.6rem, 2cqi, 2.5rem);
+}
