@@ -21,7 +21,10 @@ const QuotesApp = () => {
     setShowFavorites(!showFavorites)
   }
   const addToFavourites = ()=>{
-    setFavourites([...favourites, quote])
+    const isAlreadyInFavourites = favourites.some((fav)=>fav.text===quote.text && fav.author===quote.author,)
+    if(!isAlreadyInFavourites){
+      setFavourites([...favourites, quote])
+    }
   }
   return (
     <div className='container'>
@@ -53,7 +56,11 @@ const QuotesApp = () => {
             favourites.map((favQuote, index)=>(
               <div className="fav-quote" key={index}>
             <div className="fav-quote-delete" >
-              <i className='bx bx-x-circle'></i>
+              <i className='bx bx-x-circle' 
+                onClick={() => {
+                const updatedFavorites = favourites.filter((item, i) => i !== index)
+                setFavourites(updatedFavorites)
+                }}></i>
             </div>
             <div className="fav-quote-content">
               <div className="fav-quote-text">
